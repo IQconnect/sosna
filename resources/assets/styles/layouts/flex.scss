@@ -1,0 +1,86 @@
+.flex {
+  @include cssLock("padding-top", 360, 1920, (gutter_num(3), gutter_num(15)));
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1920,
+    (gutter_num(3), gutter_num(15))
+  );
+
+  position: relative;
+
+  &__wrapper {
+    display: grid;
+    gap: gutter(6);
+    grid-template-columns: 1fr 1fr;
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    position: relative;
+    text-align: center;
+
+    &--content {
+      @include cssLock(
+        "padding-top",
+        360,
+        1920,
+        (gutter_num(3), gutter_num(6))
+      );
+      @include cssLock(
+        "padding-bottom",
+        360,
+        1920,
+        (gutter_num(3), gutter_num(6))
+      );
+    }
+  }
+
+  &__image {
+    @extend %image;
+    @extend %absolute;
+
+    @include mediaTo(md) {
+      position: relative;
+    }
+
+    &--bg {
+      @extend %absolute;
+
+      object-fit: contain;
+      object-position: right;
+      z-index: -1;
+
+      @include mediaTo(xl) {
+        display: none;
+      }
+    }
+  }
+
+  h2 {
+    @extend .title;
+
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+
+    color: $special-dark;
+  }
+
+  p {
+    @extend .text;
+
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+  }
+}

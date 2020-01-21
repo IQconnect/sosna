@@ -1,0 +1,47 @@
+.movie {
+  // @extend %overlay;
+
+  overflow: hidden;
+  height: 65vh;
+  pointer-events: initial !important;
+  min-height: gutter(30);
+
+  &__scene {
+    position: relative;
+    width: 110%;
+    height: 110%;
+    left: -5% !important;
+    top: -5% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--sygnet {
+      z-index: 10;
+    }
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+  }
+
+  &__link {
+    @extend %absolute;
+    @extend .title;
+
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $special-light;
+    text-shadow: 0 0 gutter(2) black;
+  }
+
+  &__icon {
+    margin-bottom: gutter(3);
+    font-size: gutter(10);
+  }
+}

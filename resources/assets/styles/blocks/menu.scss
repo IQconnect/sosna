@@ -1,0 +1,77 @@
+/* stylelint-disable */
+
+$padding: gutter(3);
+
+.menu {
+  @extend %list;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include mediaTo(sm) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  li {
+    &.current-menu-item {
+      a {
+        position: relative;
+
+        &::after {
+          @extend %pseudo;
+
+          top: unset;
+          left: $padding;
+          width: calc(100% - #{$padding * 2});
+          height: gutter(0.1);
+          background-color: $special-light;
+          transition: background-color $transition;
+
+          @include mediaTo(md) {
+            left: $padding / 2;
+            width: calc(100% - #{$padding});
+          }
+        }
+      }
+    }
+
+    a {
+      @extend .menu-link;
+
+      display: block;
+      padding: gutter(1) $padding;
+      color: $special-light;
+      transition: color $transition;
+
+      @include mediaTo(md) {
+        padding: gutter(1) $padding / 2;
+      }
+
+      &:hover {
+        color: $light;
+
+        &::after {
+          background-color: $light !important;
+        }
+      }
+
+      @include mediaTo(sm) {
+        margin: gutter(1.5) 0;
+      }
+    }
+
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      a {
+        padding-right: 0;
+      }
+    }
+  }
+}

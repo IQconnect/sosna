@@ -1,0 +1,43 @@
+.hero {
+  // @extend %overlay;
+
+  overflow: hidden;
+  height: 100vh;
+
+  &__scene {
+    position: relative;
+    width: 110%;
+    height: 110%;
+    left: -5% !important;
+    top: -5% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--sygnet {
+      z-index: 10;
+    }
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+  }
+
+  &__sygnet {
+    @extend %absolute;
+
+    @include cssLock("width", 360, 1920, (gutter_num(30), gutter_num(60)));
+
+    height: auto;
+
+    &--napis {
+      @extend %absolute;
+
+      @include cssLock("width", 360, 1920, (gutter_num(30), gutter_num(60)));
+
+      height: auto;
+      top: 400px;
+    }
+  }
+}
