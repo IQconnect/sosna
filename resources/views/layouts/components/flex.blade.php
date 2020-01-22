@@ -11,13 +11,13 @@
             <div class="flex__col flex__col--content" data-aos="fade-right" data-aos-duration="500">
                 {!! $content !!}
             </div>
-            {{-- <div class="flex__col" data-aos="fade-left"
+            <div class="flex__col" data-aos="fade-left"
             data-aos-offset="200"
             data-aos-duration="1000">
                 @if($image)
                     {!! image($image['id'], 'full', 'flex__image') !!}
                 @endif
-            </div> --}}
+            </div>
         </div>
     </div>
     @if($imageBg)

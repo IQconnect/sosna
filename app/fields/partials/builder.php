@@ -13,5 +13,8 @@ $builder
             ->addLayout(get_field_partial('components.flex'))
             ->addLayout(get_field_partial('components.movie'))
             ->addLayout('contact')
+            ->addLayout(get_field_partial('components.rooms'))
+            ->addLayout(get_field_partial('components.food'))
+            ->addLayout(get_field_partial('components.gallery'))
     ;
 return $builder;

@@ -1,0 +1,49 @@
+.room {
+  $root: &;
+
+  position: relative;
+
+  &:hover {
+    #{$root}__image {
+      &--hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    width: auto;
+    height: auto;
+    margin-bottom: gutter(1.6);
+    transition: $transition;
+
+    &--hover {
+      @extend %absolute;
+
+      bottom: unset;
+      opacity: 0;
+      z-index: 10;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: gutter(0.8);
+  }
+
+  &__title {
+    color: $special-dark;
+  }
+
+  &__price {
+    color: $special-light;
+    line-height: gutter(2);
+    font-weight: 600;
+  }
+
+  &__ppl {
+    color: $gray;
+  }
+}

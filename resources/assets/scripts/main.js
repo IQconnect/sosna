@@ -16,6 +16,7 @@ import AOS from 'aos';
 import hamburger from './components/hamburger';
 import hero from './components/hero';
 import movie from './components/movie';
+import slider from './components/slider';
 
 
 /** Populate Router instance with DOM routes */
@@ -34,6 +35,11 @@ jQuery(document).ready(() => {
   hamburger.init();
   hero.init();
   movie.init();
+  slider.init();
   AOS.init();
 });
+
+setTimeout(()=> {
+  slider.resize();
+}, 300)
 

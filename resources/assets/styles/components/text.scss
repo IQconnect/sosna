@@ -24,6 +24,15 @@
   @include cssLock("font-size", 360, 1920, (gutter_num(2.4), gutter_num(5.2)));
 }
 
+.subtitle {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.6), gutter_num(2.4)));
+
+  font-weight: 600;
+  line-height: gutter(2);
+}
+
 .text {
   @extend %text;
 
@@ -34,6 +43,12 @@
   @extend %text;
 
   @include cssLock("font-size", 360, 1920, (gutter_num(2), gutter_num(3)));
+}
+
+.minor-text {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.2), gutter_num(1.6)));
 }
 
 blockquote,

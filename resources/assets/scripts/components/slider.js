@@ -1,17 +1,17 @@
 var Flickity = require('flickity');
 
 const CONFIG = {
-    ELEM: '.gallery',
-    CELL: '.gallery__cell',
+    ELEM: '.rooms__wrapper',
+    CELL: '.rooms__col',
 };
 
 const Slider = {
     init() {
         const { ELEM } = CONFIG;
         this.elem = document.querySelectorAll(ELEM);
+        this.sliders = [];
         if (this.elem) {
             this.createSlider();
-            this.resize();
         }
     },
 
@@ -20,32 +20,25 @@ const Slider = {
 
         this.elem.forEach(element => {
             console.log(element);
-            this.slider = new Flickity(element, {
+            const slider = new Flickity(element, {
                 pageDots: false,
                 prevNextButtons: false,
                 cellSelector: CELL,
+                autoPlay: false,
                 wrapAround: true,
-                autoPlay: true,
             });
-            this.slider.resize();
+            
+            console.log(slider);
+            this.sliders.push(slider);
         });
     },
 
     resize() {
-        const { CELL } = CONFIG;
-
-        if (this.elem.length) {
-            this.slider.resize();
-
-            this.elem.forEach(element => {
-                this.slider = new Flickity(element, {
-                    pageDots: false,
-                    prevNextButtons: false,
-                    cellSelector: CELL,
-                    wrapAround: true,
-                    autoPlay: true,
-                });
-                this.slider.resize();
+        console.log('resize INIT', this.sliders);
+        if(this.sliders) {
+            this.sliders.forEach(element => {
+                console.log('resize');
+                element.resize();
             });
         }
     },

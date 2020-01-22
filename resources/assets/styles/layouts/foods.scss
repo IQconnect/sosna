@@ -1,0 +1,40 @@
+.foods {
+  @include cssLock("padding-top", 360, 1920, (gutter_num(3), gutter_num(15)));
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1920,
+    (gutter_num(3), gutter_num(15))
+  );
+
+  &__header {
+    text-align: center;
+
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      (gutter_num(5), gutter_num(10))
+    );
+  }
+
+  &__title {
+    color: $special-dark;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: gutter(1.6);
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+      gap: gutter(5);
+    }
+  }
+
+  &__col {
+    margin: 0 gutter(0.8);
+  }
+}

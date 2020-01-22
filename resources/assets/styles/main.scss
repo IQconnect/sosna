@@ -36,11 +36,16 @@
 /** Blocks */
 @import "blocks/menu";
 @import "blocks/hamburger";
+@import "blocks/room";
+@import "blocks/food";
 
 /** Layouts */
 @import "layouts/header";
 @import "layouts/hero";
 @import "layouts/flex";
 @import "layouts/movie";
+@import "layouts/rooms";
+@import "layouts/foods";
+@import "layouts/gallery";
 
-/** PAges */
+/** Pages */
