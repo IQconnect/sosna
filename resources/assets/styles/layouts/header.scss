@@ -5,11 +5,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba($special-dark, 0.8);
+  background-color: rgba($special, 0.95);
   z-index: z-index(header);
+  transition: $transition;
 
   &__wrapper {
-    @include cssLock("padding", 360, 1920, (gutter_num(1.5), gutter_num(3)));
+    @include cssLock("padding", 360, 1920, (gutter_num(1), gutter_num(2)));
 
     padding-left: 0;
     padding-right: 0;
@@ -73,6 +74,14 @@
         top: 0;
         opacity: 1;
       }
+    }
+  }
+
+  &.-hide {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }

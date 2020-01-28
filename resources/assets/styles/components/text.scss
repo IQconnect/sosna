@@ -17,6 +17,13 @@
   }
 }
 
+.extra-title {
+  @extend %special;
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(5.2), gutter_num(10.4)));
+}
+
 .title {
   @extend %special;
   @extend %text;

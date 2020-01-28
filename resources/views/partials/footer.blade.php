@@ -2,17 +2,17 @@
   $madeby = option('logo-madeby')['url'];
 @endphp
 
-<footer class="section footer">
+<footer class="footer">
   <div class="container">
     <div class="footer__wrapper">
-      <nav class="footer__nav">
-        @if (has_nav_menu('primary_navigation'))
-          {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'footer__menu']) !!}
-        @endif
-      </nav>
-      <a class="footer__madeby" href="http://iqconnect.pl/">
-        <img src="{{ $madeby }}" alt="IQ Connect - Nowoczesa strona internetowa dla Twojej firmy - Strony internetowe | Realizacje Video">
-      </a>
+      <div class="footer__copyright text text--bold text--white">
+        {{ option("copyright") }}
+      </div>
+      <div class="footer__logo">
+        <a href="http://iqconnect.pl">
+          <img src="{{ option('iqlogo')['url'] }}" alt="{{ option('iqlogo')['alt'] }}">
+        </a>
+      </div>
     </div>
   </div>
 </footer>

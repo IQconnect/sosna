@@ -6,7 +6,7 @@
     $menu = get_field('menu', $id);
 @endphp
 
-<article class="food">
+<article class="food" data-aos="flip-down">
     {!! image($img, 'food', 'food__image') !!}
     @if ($hover)
     {!! image($hover, 'food', 'food__image food__image--hover') !!}    
@@ -16,7 +16,9 @@
             {{ $name }}
         </h3>
     </header>
+    @if ($menu)
     <button class="food__menu minor-text" href="{{ $menu['url'] }}" data-fancybox="{{ $name }}">
         ZOBACZ MENU
     </button>
+    @endif
 </article>

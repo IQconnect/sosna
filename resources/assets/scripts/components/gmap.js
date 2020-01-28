@@ -1,6 +1,7 @@
 /* eslint-disable */
 
 const loadGoogleMapsApi = require('load-google-maps-api')
+import mapStyle from '../util/mapStyle';
 
 const CONFIG = {
     ELEM: '[google-map]',
@@ -11,7 +12,7 @@ const Gmap = {
         const { ELEM } = CONFIG;
 
         this.elem = document.querySelector(ELEM);
-        
+
         if (this.elem) {
             this.pins = JSON.parse(this.elem.dataset.pins);
             console.log('Init Google Map: ', this.pins);
@@ -28,7 +29,7 @@ const Gmap = {
         ).then(function (googleMaps) {
 
             let map;
-            if(pins[1]) {
+            if (pins[1]) {
                 map = new googleMaps.Map(elem, {
                     center: {
                         // lat: pins[0]['pin']['lat'],
@@ -36,8 +37,9 @@ const Gmap = {
                         lat: 52.2259526,
                         lng: 21.0123483,
                     },
-                    zoom: 11.5,
-                    keyboardShortcuts: false
+                    zoom: 14.5,
+                    keyboardShortcuts: false,
+                    styles: mapStyle,
                 });
             }
 
@@ -49,15 +51,18 @@ const Gmap = {
                         // lat: 52.2259526,
                         // lng: 21.0123483,
                     },
-                    zoom: 11.5,
-                    keyboardShortcuts: false
+                    zoom: 12.5,
+                    keyboardShortcuts: false,
+                    styles: mapStyle,
                 });
             }
 
             pins.forEach(element => {
                 const infoWindow = new google.maps.InfoWindow({
                     content: `<div class="google-map__tooltip">${element.content}</div>`
-                  });
+                });
+
+                const image = element.icon;
 
                 const pin = new googleMaps.Marker({
                     position: {
@@ -66,11 +71,12 @@ const Gmap = {
                     },
                     map: map,
                     title: element.title,
+                    icon: image,
                 });
 
-                googleMaps.event.addListener(pin, 'click', function() {
-                    infoWindow.open(map,pin);
-                  });
+                googleMaps.event.addListener(pin, 'click', function () {
+                    infoWindow.open(map, pin);
+                });
 
                 console.log(pin);
             });

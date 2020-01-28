@@ -37,4 +37,8 @@
   &__col {
     margin: 0 gutter(0.8);
   }
+
+  + .foods {
+    padding-top: 0;
+  }
 }

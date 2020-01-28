@@ -1,0 +1,56 @@
+.page-content {
+  @include cssLock("padding-top", 360, 1920, (gutter_num(3), gutter_num(15)));
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1920,
+    (gutter_num(3), gutter_num(15))
+  );
+
+  position: relative;
+
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    @extend .title;
+    @extend .subtitle;
+
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+
+    color: $special;
+    font-weight: 600;
+    line-height: 13 5%;
+
+    &::first-line {
+      @extend .title;
+
+      color: $special-dark;
+      line-height: gutter(8);
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    @extend .text;
+
+    margin: 0 auto;
+
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(6))
+    );
+
+    line-height: 1.6;
+    max-width: gutter(100);
+  }
+}

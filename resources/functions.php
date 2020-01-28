@@ -294,8 +294,9 @@ function create_rooms()
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'Pokoje'),
-            'supports' => array('title', 'thumbnail', 'gallery'),
+            'rewrite' => array('slug' => 'pokoje'),
+            'supports' => array('title', 'thumbnail', 'gallery', 'editor'),
+            'show_in_rest' => true,
             'menu_icon' => 'dashicons-admin-multisite',
             'taxonomies'  => array('category'),
         )

@@ -5,14 +5,14 @@
 
 <section class="rooms">
     <div class="container">
-        <header class="rooms__header">
+        <header class="rooms__header" data-aos="fade-in">
             <h2 class="rooms__title title">
                 {!! $title !!}
             </h2>
         </header>
-        <div class="rooms__wrapper">
+        <div class="rooms__wrapper" data-aos="flip-down">
         @foreach ($rooms as $room)
-            <a class="rooms__col" href="{{ $room->guid }}">
+            <a class="rooms__col" href="{{ get_permalink($rooms[0]->ID) }}">
                 @include('blocks.room', ['room' => $room])
             </a>
         @endforeach

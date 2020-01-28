@@ -17,6 +17,8 @@ import hamburger from './components/hamburger';
 import hero from './components/hero';
 import movie from './components/movie';
 import slider from './components/slider';
+import gmap from './components/gmap';
+import menu from './components/menu';
 
 
 /** Populate Router instance with DOM routes */
@@ -37,6 +39,8 @@ jQuery(document).ready(() => {
   movie.init();
   slider.init();
   AOS.init();
+  gmap.init();
+  menu.init();
 });
 
 setTimeout(()=> {

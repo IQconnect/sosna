@@ -4,6 +4,11 @@
   overflow: hidden;
   height: 100vh;
 
+  &--small {
+    height: 60vh;
+    min-height: gutter(30);
+  }
+
   &__scene {
     position: relative;
     width: 120%;
@@ -39,5 +44,15 @@
       height: auto;
       top: 400px;
     }
+  }
+
+  &__title {
+    @extend %absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $special-light;
+    text-shadow: 0 0 gutter(2) $black;
   }
 }

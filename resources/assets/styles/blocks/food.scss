@@ -3,6 +3,10 @@
 
   position: relative;
 
+  @include media(md) {
+    transform: none !important;
+  }
+
   &:hover {
     #{$root}__image {
       &--hover {

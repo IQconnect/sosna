@@ -13,5 +13,6 @@ $food
     ->addTab('Ustawienia główne', ['placement' => 'left'])
         ->addFile('menu')
     ->addTab('Zdjęcia', ['placement' => 'side'])
-        ->addImage('hover', ['label'=>'Zdjęcia po najechaniu myszką']);
+        ->addImage('hover', ['label'=>'Zdjęcia po najechaniu myszką'])
+    ->addFields(get_field_partial('partials.builder'));
 return $food;

@@ -7,6 +7,7 @@ $padding: gutter(3);
 
   display: flex;
   justify-content: space-between;
+  margin: 0 -$padding;
 
   @include mediaTo(sm) {
     flex-direction: column;
@@ -21,16 +22,18 @@ $padding: gutter(3);
 
         &::after {
           @extend %pseudo;
+          @extend %absolute;
 
           top: unset;
-          left: $padding;
+          margin: auto;
           width: calc(100% - #{$padding * 2});
+          min-width: gutter(4);
+          max-width: 100%;
           height: gutter(0.1);
           background-color: $special-light;
           transition: background-color $transition;
 
           @include mediaTo(md) {
-            left: $padding / 2;
             width: calc(100% - #{$padding});
           }
         }
@@ -59,18 +62,6 @@ $padding: gutter(3);
 
       @include mediaTo(sm) {
         margin: gutter(1.5) 0;
-      }
-    }
-
-    &:first-child {
-      a {
-        padding-left: 0;
-      }
-    }
-
-    &:last-child {
-      a {
-        padding-right: 0;
       }
     }
   }

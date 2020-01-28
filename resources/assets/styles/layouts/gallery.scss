@@ -2,9 +2,28 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 
+  &--small {
+    display: block;
+
+    @include cssLock("padding-top", 360, 1920, (gutter_num(3), gutter_num(15)));
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      (gutter_num(3), gutter_num(15))
+    );
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: gutter(1.6);
+  }
+
   &__link {
+    position: relative;
+    padding-top: 100%;
     width: 100%;
-    height: calc(100vw / 5);
     transition: $transition;
 
     &:hover {
@@ -14,7 +33,6 @@
 
   &__img {
     @extend %image;
-
-    height: 100%;
+    @extend %absolute;
   }
 }

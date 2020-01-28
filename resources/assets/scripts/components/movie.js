@@ -9,7 +9,9 @@ const { ELEM } = CONFIG;
 const movie = {
     init() {
         this.elem = document.querySelector(ELEM);
-        new Parallax(this.elem);
+        if(this.elem) {
+            new Parallax(this.elem);
+        }
     },
 }
 

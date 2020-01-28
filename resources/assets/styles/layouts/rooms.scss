@@ -7,8 +7,14 @@
     (gutter_num(3), gutter_num(15))
   );
 
-  & + .foods {
+  & + section {
     padding-top: 0;
+  }
+
+  .container {
+    @include mediaTo(sm) {
+      padding: 0;
+    }
   }
 
   &__header {
@@ -32,5 +38,14 @@
 
   &__col {
     margin: 0 gutter(0.8);
+
+    @include mediaTo(sm) {
+      opacity: 0.3;
+      transition: $transition;
+
+      &.is-selected {
+        opacity: 1;
+      }
+    }
   }
 }

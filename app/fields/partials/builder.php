@@ -16,5 +16,7 @@ $builder
             ->addLayout(get_field_partial('components.rooms'))
             ->addLayout(get_field_partial('components.food'))
             ->addLayout(get_field_partial('components.gallery'))
+            ->addLayout('map')
+            ->addLayout('content')
     ;
 return $builder;

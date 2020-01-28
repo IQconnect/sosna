@@ -17,6 +17,10 @@
     margin-bottom: gutter(1.6);
     transition: $transition;
 
+    @include mediaTo(sm) {
+      width: 70vw;
+    }
+
     &--hover {
       @extend %absolute;
 

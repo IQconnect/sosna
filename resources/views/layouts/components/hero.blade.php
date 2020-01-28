@@ -5,7 +5,7 @@
 @endphp
 
 @if($hero)
-<section class="hero" hero data-aos="fade-in">
+<section class="hero @if(!is_front_page()) hero--small @endif" hero data-aos="fade-in">
     {{-- @foreach ($hero as $img)
         {!! image($img['id'], 'full', 'hero__image') !!}
     @endforeach --}}
@@ -23,8 +23,19 @@
         </video>
     </div>
     @endif
+
+    @if(is_front_page())
     <div class="hero__scene hero__scene--sygnet" data-depth="0.1">
-        {!! image($sygnet['id'], 'full', 'hero__sygnet') !!}
+        <h1>
+            {!! image($sygnet['id'], 'full', 'hero__sygnet') !!}
+        </h1>
     </div>
+    @else 
+    <div class="hero__scene hero__scene--title" data-depth="0.1">
+        <h1 class="hero__title extra-title">
+            {{ get_the_title() }}
+        </h1>
+    </div>
+    @endif
 </section>
 @endif
