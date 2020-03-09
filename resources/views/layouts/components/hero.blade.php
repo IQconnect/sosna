@@ -17,7 +17,7 @@
         {!! image($hero[0]['id'], 'full', 'hero__image') !!}
     </div>
     @if ($movie)
-    <div  class="hero__scene" data-depth="0.6">
+    <div  class="hero__scene hero__scene--movie" data-depth="0.6">
         <video class="hero__image" playsinline="" autoplay="" muted="" loop="">
             <source src="{{ $movie['url'] }}" type="video/mp4">
         </video>

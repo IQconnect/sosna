@@ -22,8 +22,16 @@
                     </div>
                     <div>
                     <h3 class="contact__label text">
-                        <a class="contact__link" href="tel:{{ str_replace(' ','', option('phone')) }}">
-                        {{ option('phone') }}
+                        @php
+                            $phone = option('phone');
+                            $phone  = explode('<br>', $phone);
+                        @endphp
+                        <a class="contact__link" href="tel:{{ str_replace(' ','', $phone[0]) }}">
+                        {!! $phone[0] !!}
+                        </a>
+                        <br>
+                        <a class="contact__link" href="tel:{{ str_replace(' ','', $phone[1]) }}">
+                            {!! $phone[1] !!}
                         </a>
                     </h3>
                 </div>

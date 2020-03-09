@@ -12,6 +12,7 @@ const Slider = {
         this.sliders = [];
         if (this.elem) {
             this.createSlider();
+            this.resize();
         }
     },
 
@@ -21,8 +22,8 @@ const Slider = {
         this.elem.forEach(element => {
             console.log(element);
             const slider = new Flickity(element, {
-                pageDots: false,
-                prevNextButtons: false,
+                pageDots: true,
+                prevNextButtons: true,
                 cellSelector: CELL,
                 autoPlay: false,
                 wrapAround: true,

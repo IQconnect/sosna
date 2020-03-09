@@ -30,10 +30,22 @@
 
   &__title {
     color: $special-dark;
+    max-width: gutter(100);
+
+    &::first-line {
+      @extend .title;
+    }
+
+    @extend .subtitle;
+
+    line-height: gutter(4);
+    margin: 0 auto;
+    letter-spacing: 0.3px;
   }
 
   &__wrapper {
     width: 100%;
+    min-height: gutter(60);
   }
 
   &__col {

@@ -1,3 +1,5 @@
+import slider from './slider'
+
 const CONFIG = {
   ELEM: 'header',
   CLASS: 'header--hide',
@@ -28,6 +30,8 @@ const header = {
       if (isScrollTop)
         this.elem.classList.remove(this.class);
 
+
+      if(s < 100) slider.resize();
       ls = s;
     };
   },

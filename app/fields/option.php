@@ -14,6 +14,7 @@ $option_page
         ->addImage('logo', ['wrapper'=>['width'=>'33%']])
         ->addImage('sygnet', ['wrapper'=>['width'=>'33%']])
         ->addImage('logo-madeby', ['label'=>'Wykonanie logo','wrapper'=>['width'=>'33%']])
+        ->addImage('mapka', ['label'=>'Mapa ośrodka','wrapper'=>['width'=>'33%']])
     ->addTab('Kontakt', ['placement' => 'left'])
         ->addText('name', ['label' => 'Nazwa firmy'])
         ->addTextarea('address', ['label' => 'Adres firmy', 'rows' => '2', 'new_lines' => 'br'])

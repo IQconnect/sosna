@@ -38,12 +38,30 @@ jQuery(document).ready(() => {
   hero.init();
   movie.init();
   slider.init();
-  AOS.init();
   gmap.init();
   menu.init();
+  window.dispatchEvent(new Event('resize'));
+  console.log('log 1');
+
+  setTimeout(() => {
+    slider.resize();
+    AOS.init({
+      // Global settings:
+      offset: 0, // offset (in px) from the original trigger point
+    });
+  }, 300)
+
+  setTimeout(() => {
+    slider.resize();
+    AOS.refresh();
+  }, 1000)
+
+  setTimeout(() => {
+    slider.resize();
+    AOS.refresh();
+  }, 3000)
+
+  $('a').each(function () {
+    this.href = this.href.replace('localhost', 'krolewskasosna.pl');
+  });
 });
-
-setTimeout(()=> {
-  slider.resize();
-}, 300)
-

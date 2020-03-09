@@ -1,0 +1,41 @@
+.mini-map {
+  $root: &;
+
+  position: fixed;
+  top: 30%;
+  right: 0;
+  z-index: 100;
+  transition: $transition;
+  height: 200px;
+  display: block;
+
+  &__title {
+    @extend %absolute;
+
+    padding: $gutter $gutter * 2;
+    transform: rotate(-90deg);
+    background-color: $special-dark;
+    color: $light;
+    position: absolute;
+    left: -120px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    transition: $transition;
+    bottom: unset;
+    font-size: 22px;
+    top: 80px;
+  }
+
+  &__image {
+    @extend %absolute;
+
+    height: 200px;
+    width: 170px;
+    object-fit: cover;
+  }
+
+  &:hover {
+    right: 170px;
+  }
+}

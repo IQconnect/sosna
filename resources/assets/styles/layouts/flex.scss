@@ -83,4 +83,8 @@
       (gutter_num(3), gutter_num(6))
     );
   }
+
+  & + section {
+    padding-top: 0 !important;
+  }
 }
